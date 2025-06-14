@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aqua K Marine Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo Area (Left Side) -->
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <img src="../main logo.jpeg" alt="Aqua K Marine Services Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu (Center) -->
+            <nav class="nav-menu">
+                <ul class="menu-items">
+                    <li class="menu-item active">
+                        <a href="index.html">Home</a>
+                        <span class="active-indicator"><i class="fas fa-anchor"></i></span>
+                    </li>
+                    <li class="menu-item has-dropdown">
+                        <a href="services.html">Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services.html#pilotage">Pilotage Services</a></li>
+                            <li><a href="services.html#navigation">Navigation Support</a></li>
+                            <li><a href="services.html#maintenance">Marine Maintenance</a></li>
+                            <li><a href="services.html#training">Maritime Training</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="about.html">About Us</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="team.html">Our Team</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="safety.html">Safety Standards</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Right Side Elements -->
+            <div class="header-right">
+                <div class="contact-info">
+                    <i class="fas fa-phone-alt"></i>
+                    <span class="phone-number">+1 (555) 123-4567</span>
+                </div>
+                <div class="divider"></div>
+                <a href="request.html" class="cta-button">
+                    <i class="fas fa-anchor"></i>
+                    <span>Request Pilot Services</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="mobile-menu-toggle">
+                <span class="hamburger-icon">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </span>
+            </div>
+        </div>
+        
+        <!-- Bottom Wave Line -->
+        <div class="wave-line"></div>
+    </header>
+
+    <!-- Mobile Navigation Menu (Hidden by default) -->
+    <div class="mobile-nav">
+        <ul class="mobile-menu-items">
+            <li class="mobile-menu-item active">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="mobile-menu-item has-dropdown">
+                <a href="services.html">Services</a>
+                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="services.html#pilotage">Pilotage Services</a></li>
+                    <li><a href="services.html#navigation">Navigation Support</a></li>
+                    <li><a href="services.html#maintenance">Marine Maintenance</a></li>
+                    <li><a href="services.html#training">Maritime Training</a></li>
+                </ul>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="about.html">About Us</a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="team.html">Our Team</a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="safety.html">Safety Standards</a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="contact.html">Contact</a>
+            </li>
+        </ul>
+        <div class="mobile-contact">
+            <a href="tel:+15551234567" class="mobile-phone">
+                <i class="fas fa-phone-alt"></i>
+                <span>+1 (555) 123-4567</span>
+            </a>
+            <a href="request.html" class="mobile-cta">
+                <i class="fas fa-anchor"></i>
+                <span>Request Pilot Services</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Placeholder for page content -->
+    <main class="main-content">
+        <section class="hero" style="background-image: url('../images/kota-kinabalu-port.jpeg'); background-size: cover; background-position: center;">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Professional Maritime Services</h1>
+                <p>Guiding ships safely through waters since 1995</p>
+            </div>
+        </section>
+        
+        <!-- Services Preview -->
+        <section class="services-preview">
+            <div class="container">
+                <div class="service-card">
+                    <img src="../images/freepik__the-style-is-candid-image-photography-with-natural__89755.jpeg" alt="Maritime Service">
+                    <h3>Pilotage Services</h3>
+                </div>
+                <div class="service-card">
+                    <img src="../images/freepik__the-style-is-candid-image-photography-with-natural__89757.jpeg" alt="Navigation Support">
+                    <h3>Navigation Support</h3>
+                </div>
+                <div class="service-card">
+                    <img src="../images/freepik__the-style-is-candid-image-photography-with-natural__89756.jpeg" alt="Marine Maintenance">
+                    <h3>Marine Maintenance</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 

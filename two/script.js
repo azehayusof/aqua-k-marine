@@ -1,126 +1,88 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // DOM Elements
-    const header = document.querySelector('.header');
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const mobileNav = document.querySelector('.mobile-nav');
-    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-    const mainContent = document.querySelector('.main-content');
-    
-    // Sticky Header on Scroll
-    function handleScroll() {
-        if (window.scrollY > 100) {
-            header.classList.add('sticky');
-            mainContent.style.paddingTop = getComputedStyle(document.documentElement).getPropertyValue('--header-height-sticky');
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll <= 0) {
+            navbar.style.transform = 'translateY(0)';
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            return;
+        }
+        
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            // Scrolling down
+            navbar.style.transform = 'translateY(-100%)';
         } else {
-            header.classList.remove('sticky');
-            mainContent.style.paddingTop = getComputedStyle(document.documentElement).getPropertyValue('--header-height');
-        }
-    }
-    
-    // Toggle Mobile Menu
-    function toggleMobileMenu() {
-        mobileMenuToggle.classList.toggle('active');
-        mobileNav.classList.toggle('active');
-        
-        // Prevent body scrolling when mobile menu is open
-        if (mobileNav.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-    }
-    
-    // Toggle Mobile Dropdown Menus
-    function toggleDropdown(event) {
-        event.preventDefault();
-        
-        const dropdownToggle = this;
-        const dropdownMenu = dropdownToggle.parentElement.querySelector('.mobile-dropdown-menu');
-        
-        // Toggle active class for the arrow icon
-        dropdownToggle.classList.toggle('active');
-        
-        // Toggle the dropdown visibility
-        if (dropdownMenu.style.display === 'block') {
-            dropdownMenu.style.display = 'none';
-        } else {
-            dropdownMenu.style.display = 'block';
-        }
-    }
-    
-    // Add Ripple Effect to Buttons
-    function createRipple(event) {
-        const button = event.currentTarget;
-        
-        const circle = document.createElement('span');
-        const diameter = Math.max(button.clientWidth, button.clientHeight);
-        const radius = diameter / 2;
-        
-        circle.style.width = circle.style.height = `${diameter}px`;
-        circle.style.left = `${event.clientX - button.getBoundingClientRect().left - radius}px`;
-        circle.style.top = `${event.clientY - button.getBoundingClientRect().top - radius}px`;
-        circle.classList.add('ripple');
-        
-        // Remove existing ripple
-        const ripple = button.querySelector('.ripple');
-        if (ripple) {
-            ripple.remove();
+            // Scrolling up
+            navbar.style.transform = 'translateY(0)';
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
         }
         
-        button.appendChild(circle);
-    }
-    
-    // Close Mobile Menu on Window Resize (if open)
-    function handleResize() {
-        if (window.innerWidth > 900 && mobileNav.classList.contains('active')) {
-            mobileMenuToggle.classList.remove('active');
-            mobileNav.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    }
-    
-    // Event Listeners
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleResize);
-    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
-    
-    // Add click event to all dropdown toggles
-    dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', toggleDropdown);
+        lastScroll = currentScroll;
     });
-    
-    // Add ripple effect to buttons
-    const buttons = document.querySelectorAll('.cta-button, .mobile-cta');
-    buttons.forEach(button => {
-        button.addEventListener('click', createRipple);
-    });
-    
-    // Add CSS for ripple effect
-    const style = document.createElement('style');
-    style.textContent = `
-        .cta-button, .mobile-cta {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .ripple {
-            position: absolute;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.4);
-            transform: scale(0);
-            animation: ripple 0.6s linear;
-            pointer-events: none;
-        }
-        
-        @keyframes ripple {
-            to {
-                transform: scale(4);
-                opacity: 0;
+
+    // Smooth scroll for menu items
+    document.querySelectorAll('.menu a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
-        }
-    `;
-    document.head.appendChild(style);
+        });
+    });
+
+    // Menu item hover effect
+    const menuItems = document.querySelectorAll('.menu li');
+    menuItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Contact button animation
+    const contactButton = document.querySelector('.contact-button');
+    contactButton.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px) scale(1.05)';
+    });
     
-    // Initialize state (in case page is loaded scrolled down)
-    handleScroll();
+    contactButton.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+    });
+
+    // Add active class to menu items based on scroll position
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.menu a');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.parentElement.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.parentElement.classList.add('active');
+            }
+        });
+    });
 }); 

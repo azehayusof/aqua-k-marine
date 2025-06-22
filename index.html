@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aqua K Marine Services </title>
+    <title>Aqua K Marine Services - Secure Access</title>
     <style>
         :root {
             --ocean-blue: #1a4b6e;
@@ -44,21 +44,21 @@
             z-index: -1;
         }
 
-        .container {
+        .login-container {
             text-align: center;
             padding: 3rem;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             backdrop-filter: blur(10px);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            max-width: 900px;
+            max-width: 500px;
             width: 90%;
             border: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
         }
 
-        .container::before {
+        .login-container::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -75,13 +75,13 @@
         }
 
         .title-section {
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             position: relative;
             z-index: 1;
         }
 
         .company-name {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 800;
             margin: 0;
             background: linear-gradient(45deg, var(--sand), #fff, var(--sand));
@@ -99,16 +99,15 @@
         }
 
         .subtitle {
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.9);
-            margin-top: 1rem;
+            margin-top: 0.5rem;
             font-style: italic;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .anchor-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
             animation: float 3s ease-in-out infinite;
             filter: drop-shadow(0 0 10px rgba(244, 208, 63, 0.3));
         }
@@ -117,6 +116,120 @@
             0% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-15px) rotate(5deg); }
             100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .login-form {
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--sand);
+            box-shadow: 0 0 15px rgba(244, 208, 63, 0.3);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 1.2rem;
+            font-size: 1.2rem;
+            background: linear-gradient(45deg, var(--wave), var(--sea-green));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-weight: 600;
+        }
+
+        .login-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-btn:hover::before {
+            left: 100%;
+        }
+
+        .error-message {
+            color: #ff6b6b;
+            margin-top: 1rem;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+            display: none;
+        }
+
+        .main-content {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            max-width: 900px;
+            width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
         }
 
         .nav-buttons {
@@ -228,6 +341,26 @@
                 transform: translateX(-200px);
             }
         }
+
+        .logout-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 107, 107, 0.8);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255, 107, 107, 1);
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -241,7 +374,27 @@
         <div class="bubble"></div>
         <div class="bubble"></div>
     </div>
-    <div class="container">
+<!-- Login Form -->
+<div class="login-container" id="loginContainer">
+    <div class="title-section">
+        <div class="anchor-icon">⚓</div>
+        <h1 class="company-name">Aqua K Marine Services</h1>
+        <p class="subtitle">Secure Access Required</p>
+    </div>
+
+    <form class="login-form" id="loginForm">
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter password" required>
+        </div>
+        <button type="submit" class="login-btn">Access Portal</button>
+        <div class="error-message" id="errorMessage">Invalid password. Please try again.</div>
+    </form>
+</div>
+
+<!-- Main Content (Hidden until authenticated) -->
+<div class="main-content" id="mainContent">
+    <button class="logout-btn" onclick="logout()">Logout</button>
         <div class="title-section">
             <div class="anchor-icon">⚓</div>
             <h1 class="company-name">Aqua K Marine Services</h1>
@@ -255,6 +408,88 @@
             <a href="four/index.html" target="_blank" class="nav-button">Port Four</a>
         </div>
     </div>
+
     <div class="wave-decoration"></div>
+<script>
+    // Obfuscated and encrypted authentication system
+    (function () {
+        'use strict';
+
+        // Encrypted credentials (base64 encoded and obfuscated)
+        const _0x4f2a = ['YXplaGFYbWFyaW5l'];
+        const _0x3e1b = function (_0x2d4f) { return atob(_0x2d4f); };
+
+        // Session management
+        const _0x5c8d = 'auth_session';
+        const _0x7f3e = function () { return sessionStorage.getItem(_0x5c8d); };
+        const _0x9a2b = function (_0x1f4c) { sessionStorage.setItem(_0x5c8d, _0x1f4c); };
+        const _0x6e4d = function () { sessionStorage.removeItem(_0x5c8d); };
+
+        // Authentication function
+        const _0x8b1c = function (_0x4a7d) {
+            const _0x2c3f = _0x3e1b(_0x4f2a[0]);
+            return _0x4a7d === _0x2c3f;
+        };
+
+        // UI elements
+        const _0x4c5a = document.getElementById('loginContainer');
+        const _0x7d2e = document.getElementById('mainContent');
+        const _0x3f8b = document.getElementById('loginForm');
+        const _0x2e9a = document.getElementById('errorMessage');
+
+        // Check if already authenticated
+        if (_0x7f3e()) {
+            _0x4c5a.style.display = 'none';
+            _0x7d2e.style.display = 'block';
+            return;
+        }
+
+        // Login form handler
+        _0x3f8b.addEventListener('submit', function (_0x5e4f) {
+            _0x5e4f.preventDefault();
+
+            const _0x4d1f = document.getElementById('password').value;
+
+            if (_0x8b1c(_0x4d1f)) {
+                _0x9a2b('authenticated');
+                _0x4c5a.style.display = 'none';
+                _0x7d2e.style.display = 'block';
+                _0x2e9a.style.display = 'none';
+            } else {
+                _0x2e9a.style.display = 'block';
+                document.getElementById('password').value = '';
+            }
+        });
+
+        // Logout function
+        window.logout = function () {
+            _0x6e4d();
+            _0x4c5a.style.display = 'block';
+            _0x7d2e.style.display = 'none';
+            _0x3f8b.reset();
+            _0x2e9a.style.display = 'none';
+        };
+
+        // Prevent right-click and F12
+        document.addEventListener('contextmenu', function (_0x1f2d) {
+            _0x1f2d.preventDefault();
+            return false;
+        });
+
+        document.addEventListener('keydown', function (_0x3c4d) {
+            if (_0x3c4d.keyCode === 123 || (_0x3c4d.ctrlKey && _0x3c4d.shiftKey && _0x3c4d.keyCode === 73) || (_0x3c4d.ctrlKey && _0x3c4d.shiftKey && _0x3c4d.keyCode === 74) || (_0x3c4d.ctrlKey && _0x3c4d.keyCode === 85)) {
+                _0x3c4d.preventDefault();
+                return false;
+            }
+        });
+
+        // Disable text selection
+        document.addEventListener('selectstart', function (_0x2d1f) {
+            _0x2d1f.preventDefault();
+            return false;
+        });
+
+    })();
+</script>
 </body>
 </html>

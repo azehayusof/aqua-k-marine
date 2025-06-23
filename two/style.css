@@ -732,22 +732,97 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+    .hero {
+            height: auto;
+            min-height: 100vh;
+            padding: 2.5rem 0 1.5rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background-position: center top;
+        }
+    
+        .hero-content {
+            flex-direction: column !important;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem !important;
+            margin: 30px !important;
+            padding: 0 1rem !important;
+            width: 100%;
+            max-width: 100vw;
+        }
     .hero-text {
-        padding: 2rem;
+        padding: 1.2rem 1rem 1.2rem 1rem !important;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 14px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+            align-items: center !important;
+            text-align: center !important;
+            width: 100%;
+            margin-bottom: 0.5rem;
+    }
+    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .template {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    margin-bottom: 1rem;
+    }
+    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .line1 {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    font-size: 1.7rem !important;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    letter-spacing: 1.5px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    margin-bottom: 0.2rem;
     }
 
-    .company-name {
-        font-size: 2.2rem;
-    }
-
-    .tagline {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-    }
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .line2 {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    font-size: 0.9rem !important;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    letter-spacing: 0.2em;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    margin-top: 0.5rem;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .tagline {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    font-size: 1rem !important;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    margin-bottom: 1.2rem !important;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    color: #D32F2F;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    font-weight: 600;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    line-height: 1.4;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
     .cta-button {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
+        width: 100%;
+            padding: 0.9rem 0 !important;
+            font-size: 1.05rem !important;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero-image {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 120px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .anchor-icon {
+            position: static !important;
+            width: 90px !important;
+            height: 90px !important;
+            margin: 0 auto 0.5rem auto;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+            border-width: 1px;
+        }
+        
+        .anchor-icon img,
+        .anchor-icon svg {
+            width: 60px !important;
+            height: 60px !important;
+        }
+        
+        .wave-container,
+        .ship-container {
+            display: none !important;
     }
 }
 
@@ -1915,5 +1990,300 @@ body {
     .services-cards-section,
     .contact-section {
         padding: 3rem 0;
+    }
+}
+/* Hamburger styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger .bar {
+    width: 28px;
+    height: 3px;
+    background: #D32F2F;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100vw;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 0;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        display: none;
+        z-index: 1000;
+    }
+
+    .menu.open {
+        display: flex;
+    }
+
+    .menu li {
+        width: 100%;
+        margin: 0;
+    }
+
+    .menu a {
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    .contact-button {
+        margin: 1rem 0 0 0;
+        width: 90%;
+        align-self: center;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .menu-container {
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        width: 100vw;
+        min-width: 100vw;
+        max-width: 100vw;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.2rem 0 0.1rem 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        border-bottom: 1px solid #eee;
+        background: rgba(255, 255, 255, 0.98);
+        position: relative;
+        z-index: 1002;
+    }
+
+    .logo-container {
+        padding: 0.2rem 0 0.1rem 0;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .logo {
+        width: 72px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .hamburger {
+        width: 38px;
+        height: 38px;
+        margin: 0.1rem auto 0.1rem auto;
+    }
+
+    .menu {
+        top: 44px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 991px) {
+    .navbar {
+        width: 100vw;
+        min-width: 100vw;
+        max-width: 100vw;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem 0 0.3rem 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        border-bottom: 1px solid #eee;
+        background: rgba(255, 255, 255, 0.98);
+        position: relative;
+        z-index: 1002;
+    }
+
+    .logo-container {
+        padding: 0.5rem 0 0.3rem 0;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .logo {
+        width: 90px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .hamburger {
+        width: 44px;
+        height: 44px;
+        margin: 0.2rem auto 0.2rem auto;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .menu-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu {
+        top: 60px;
+        left: 0;
+        width: 100vw;
+        border-radius: 0 0 14px 14px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+        background: #fff;
+        padding: 0.7rem 0;
+    }
+
+    .menu.open {
+        border-top: 1px solid #eee;
+    }
+
+    .menu li {
+        width: 100%;
+        margin: 0;
+    }
+
+    .menu a {
+        width: 100%;
+        padding: 1.2rem 2rem;
+        font-size: 1.15rem;
+        text-align: left;
+    }
+
+    .contact-button {
+        width: 90%;
+        margin: 1rem auto 0.3rem auto;
+        font-size: 1.12rem;
+        padding: 1rem 0;
+        border-radius: 8px;
+    }
+
+    .hero {
+        min-height: 80vh;
+        padding: 3rem 0 2rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        background-position: center top;
+    }
+
+    .hero-content {
+        flex-direction: column !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem !important;
+        margin: 40px 0 0 0 !important;
+        padding: 0 2rem !important;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    .hero-text {
+        padding: 2rem 1.5rem 2rem 1.5rem !important;
+        background: rgba(255, 255, 255, 0.96);
+        border-radius: 16px;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+        align-items: center !important;
+        text-align: center !important;
+        width: 100%;
+        margin-bottom: 1rem;
+        max-width: 500px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .template {
+        margin-bottom: 1.2rem;
+    }
+
+    .line1 {
+        font-size: 2.5rem !important;
+        letter-spacing: 2px;
+        margin-bottom: 0.3rem;
+    }
+
+    .line2 {
+        font-size: 1.2rem !important;
+        letter-spacing: 0.25em;
+        margin-top: 0.7rem;
+    }
+
+    .tagline {
+        font-size: 1.18rem !important;
+        margin-bottom: 1.5rem !important;
+        color: #D32F2F;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: 1.1rem 0 !important;
+        font-size: 1.13rem !important;
+        border-radius: 10px;
+        margin-bottom: 0.7rem;
+    }
+
+    .hero-image {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 150px;
+        margin-bottom: 1rem;
+    }
+
+    .anchor-icon {
+        position: static !important;
+        width: 80px !important;
+        height: 80px !important;
+        margin: 0 auto 0.7rem auto;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+        border-width: 1.5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .anchor-icon img,
+    .anchor-icon svg {
+        width: 54px !important;
+        height: 54px !important;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .wave-container,
+    .ship-container {
+        display: none !important;
     }
 }
